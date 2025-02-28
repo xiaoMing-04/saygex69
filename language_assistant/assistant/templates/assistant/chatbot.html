@@ -1,0 +1,80 @@
+{% extends "assistant/base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>AI Chatbot | Language Assistant</title>
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'assistant/css/style.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <!-- Chatbot Toggler -->
+  <button id="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-rounded">close</span>
+  </button>
+
+  <div class="chatbot-popup">
+    <!-- Chatbot Header -->
+    <div class="chat-header">
+      <div class="header-info">
+        <img class="chatbot-logo" src="{% static 'assistant/images/zundamon.webp' %}" alt="Chatbot Logo" width="50" height="50">
+        <!-- <h2 class="logo-text">Chatbot</h2> -->
+        <h2 class="logo-text">Nguyn</h2>
+      </div>
+
+      <div class="bot-btn-nav">
+
+        <div class="language-selector">
+          <select id="voice-lang">
+            <option value="en-US">🇺🇸 English</option>
+            <option value="vi-VN">🇻🇳 Tiếng Việt</option>
+            <option value="ja-JP">🇯🇵 日本語 (Nhật)</option>
+            <option value="ko-KR">🇰🇷 한국어 (Hàn)</option>
+            <option value="zh-CN">🇨🇳 中文 (Trung)</option>
+          </select>
+        </div>
+        <!-- new conversation -->
+        <button id="new-conversation" class="material-symbols-rounded">restart_alt</button>
+        <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+        
+      </div>
+    </div>
+
+    <!-- Chatbot Body -->
+    <div class="chat-body">
+      <div class="message bot-message">
+        <img class="bot-avatar" src="{% static 'assistant/images/zundamon.webp' %}" alt="Chatbot Logo" width="50" height="50">
+        <!-- prettier-ignore -->
+        <div class="message-text"> Hey there  <br /> How can I help you today? </div>
+      </div>
+    </div>
+
+    <!-- Chatbot Footer -->
+    <div class="chat-footer">
+      <form action="#" class="chat-form">
+        <textarea placeholder="Message..." class="message-input" required></textarea>
+        <div class="chat-controls">
+          <button type="button" id="emoji-picker" class="material-symbols-outlined">sentiment_satisfied</button>
+          <div class="file-upload-wrapper">
+            <input type="file" accept="image/*" id="file-input" hidden />
+            <img src="#" />
+            <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+            <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+          </div>
+          <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block js %}
+  <!-- Linking Emoji Mart script for emoji picker -->
+  <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+  <!-- Linking custom script -->
+  <script src="{% static 'assistant/js/script.js' %}"></script>
+{% endblock %}
