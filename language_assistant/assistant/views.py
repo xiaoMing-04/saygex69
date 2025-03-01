@@ -14,8 +14,8 @@ VOICEVOX_PORT = "50021"
 VOICEVOX_SPEAKER = 3
 
 SPEECHIFY_URL = "https://api.sws.speechify.com/v1/audio/speech"
-SPEECHIFY_VOICE_ID = "cb462d07-32ac-433d-a234-56f3018c1a1c"
-SPEECHIFY_AUTH_TOKEN = "2gI-scgTFcZtut-ZvOQ0W2fT17_azarWzPTQkEW_U54="
+SPEECHIFY_VOICE_ID = ""
+SPEECHIFY_AUTH_TOKEN = ""
 
 SAVE_FOLDER = os.path.join("media", "audio")  # Thư mục lưu file WAV
 os.makedirs(SAVE_FOLDER, exist_ok=True)
