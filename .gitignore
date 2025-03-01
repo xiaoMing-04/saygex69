@@ -1,1 +1,1 @@
-echo "venv/" >> .gitignore
+git rm --cached -r venv*
